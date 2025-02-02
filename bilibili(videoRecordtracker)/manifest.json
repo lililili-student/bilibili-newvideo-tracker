@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Bilibili Video Tracker",
+  "version": "0.1",
+  "description": "记录Bilibili换一换前的视频链接和标题",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["*://www.bilibili.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.bilibili.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "查看已记录视频"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
+//made by leo
